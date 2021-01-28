@@ -1,8 +1,10 @@
-## Welcome to GitHub Pages
+## About Me
 
-You can use the [editor on GitHub](https://github.com/aslanxie/aslanxie.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+An engineer focus on video codec and application(more detail on [Linkedin Profile](https://www.linkedin.com/in/aslan-xie/) 
+to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+
 
 ### Markdown
 
