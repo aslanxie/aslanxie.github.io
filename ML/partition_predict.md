@@ -1,6 +1,6 @@
 ## Partition Predict
 
-The basic process unit of video codec is block. Eoncoder try different partition, prediction and transform methods on blocks to remove information redundancy and improve compress performance. From history experience, there is a obvious compress performance improvement in every new codec with more advance/complicate algorithm. The increasing of algorithm complexity have exceeded CPU, even GPU, general compute performance. One reason is codec have to try more options in loop step, including find more optimized partition, prediction and transform methods. Patition method depend on prediction, and prediction method depend on transform. So, more option in every setp means exponential growth compute capacity.
+The basic process unit of video codec is block. Eoncoder try different partition, prediction and transform methods on blocks to remove information redundancy and improve compress performance. From history experience, there is a obvious compress performance improvement in every new codec with more advance/complicate algorithm. The increasing of algorithm complexity have exceeded CPU, even GPU, general compute performance. One reason is encoder have to try more options in loop step, including find more optimized partition, prediction and transform methods. Patition method depend on prediction, and prediction method depend on transform. So, more option in every setp means exponential growth compute capacity.
 
 The firt thought to this problem is can I adapt the problem to deep learning. For example, I use CNN to predict partition type. Let's try it. 
 
@@ -18,7 +18,7 @@ At the same time, I split frame data to block with partition type. The the video
 
 ## CNN
 
-I try to build a simple CNN network and compare with transfer learning from MobileNetV2, the models trained on 800K data set. 
+I try to build a simple CNN network, the models trained on 800K data set. Here are the model summary:
 ```javascript
 Model: "sequential"
 _________________________________________________________________
@@ -116,4 +116,6 @@ real     [ 56.  22.  21. 367.  12.  10.   8.   5.   7.   2.]
 predict  [121.   3.   3. 383.   0.   0.   0.   0.   0.   0.]
 matching [ 46.   2.   0. 347.   0.   0.   0.   0.   0.   0.]
 ```
+## Summary
 
+Compared with classical image classfication, a block in frame is usually only a small parts of object, and is difficult to generate enough features to recognise it.
