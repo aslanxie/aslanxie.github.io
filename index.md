@@ -4,4 +4,4 @@
 
 
 ## Deep Learning
-[Partition Predict](ML/partition_predict.md)
+[Partition Predict](ML/partition_predict.md): predict encoder partition type with deep learning network
