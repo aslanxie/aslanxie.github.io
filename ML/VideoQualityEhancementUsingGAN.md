@@ -141,4 +141,4 @@ Adjust LAMBDA from 100 to 1000, it means more weights on L1 distance. I got a be
 
 ![sample](img/vq-1.png)
 
-The predicted image removed the block effect, maybe ehnamce object edge.
+The predicted image removed the block effect, maybe ehnamce object edge. It's not good, but not bad, I think:)
