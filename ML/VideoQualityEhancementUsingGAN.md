@@ -90,7 +90,7 @@ Non-trainable params: 12,928
 __________________________________________________________________________________________________
 ```
 
-Here is the discremator.
+Here is the discriminator.
 ```javascript
 Model: "model_1"
 __________________________________________________________________________________________________
@@ -132,4 +132,8 @@ Trainable params: 5,915,905
 Non-trainable params: 3,328
 __________________________________________________________________________________________________
 ```
+## Training and Evaluating
 
+At beginnig, the generated frame PSNR are lower (few db) than input frame while following the defalut configuration. 
+
+Adjust LAMBDA from 100 to 1000, it means more weights on L1 distance. I got a better PSNR and SSIM.
