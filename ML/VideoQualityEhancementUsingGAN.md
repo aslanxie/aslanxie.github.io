@@ -7,13 +7,13 @@ I'll try to apply GAN on video frame for video quality enhancement at this time,
 
 ## Preparing
 
-The test content is [CSGO](https://media.xiph.org/video/derf/twitch/Uncompressed/CSGO.mov) from [xiph](https://media.xiph.org/video/derf/). I encode it with Intel Media SDK sampe, the key parameters: 2Mbps, 60fps and speed mode. Yes, it's a very low bitrate for this heavy moving video. So, the video quality is very low (PSNR ~28, SSIM 0.65). 
+The test content is [CSGO](https://media.xiph.org/video/derf/twitch/Uncompressed/CSGO.mov) from [xiph](https://media.xiph.org/video/derf/). I encode it with Intel Media SDK sample, the key parameters: 2Mbps, 60fps and speed mode. Yes, it's a very low bitrate for this heavy moving video. So, the video quality is very low (PSNR ~28, SSIM 0.65). 
 
 After encoding and decoding, I transfer the video image to RGB space frame by frame. The input is video after encoder and decoder, the target is the source video for encoder.
 
 ## Model
 
-For simple test, I keep the model like pix2pix, just change the input to 512 x 512(crop from 1920 x 1080 video)
+For simple test, I keep the model like pix2pix, just change the input to 512 x 512(randomly crop from 1920 x 1080 video)
 
 Here is the generator
 
