@@ -137,6 +137,7 @@ ________________________________________________________________________________
 At beginnig, the generated frame PSNR are lower (few db) than input frame while following the defalut configuration. 
 
 Adjust LAMBDA from 100 to 1000, it means more weights on L1 distance. I got a better PSNR and SSIM.
-![summary](image/vq-summary.png)
-![sample](image/vq-1.pngg)
+![summary](img/vq-summary.png)
+
+![sample](img/vq-1.png)
 
