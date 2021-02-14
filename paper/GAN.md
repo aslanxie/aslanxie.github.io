@@ -10,3 +10,6 @@ Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley,
 
 * [Perceptual Losses for Real-Time Style Transfer and Super-Resolution
 Justin Johnson, Alexandre Alahi, Li Fei-Fei](https://arxiv.org/abs/1603.08155)
+
+* [Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
+Jun-Yan Zhu, Taesung Park, Phillip Isola, Alexei A. Efros](https://arxiv.org/abs/1703.10593)
