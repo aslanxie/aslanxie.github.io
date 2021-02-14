@@ -13,3 +13,6 @@ Justin Johnson, Alexandre Alahi, Li Fei-Fei](https://arxiv.org/abs/1603.08155)
 
 * [Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
 Jun-Yan Zhu, Taesung Park, Phillip Isola, Alexei A. Efros](https://arxiv.org/abs/1703.10593)
+
+* [Image-to-Image Translation with Conditional Adversarial Networks
+Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, Alexei A. Efros](https://arxiv.org/abs/1611.07004)
