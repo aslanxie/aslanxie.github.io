@@ -19,4 +19,7 @@ Justin Johnson, Alexandre Alahi, Li Fei-Fei](https://arxiv.org/abs/1603.08155)
 * [Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
 Jun-Yan Zhu, Taesung Park, Phillip Isola, Alexei A. Efros](https://arxiv.org/abs/1703.10593)
 
+* [A note on the evaluation of generative models
+Lucas Theis, Aäron van den Oord, Matthias Bethge](https://arxiv.org/abs/1511.01844)
+
 
