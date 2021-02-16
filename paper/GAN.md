@@ -25,6 +25,6 @@ Lucas Theis, Aäron van den Oord, Matthias Bethge](https://arxiv.org/abs/1511.01
 * [Precomputed Real-Time Texture Synthesis with Markovian Generative Adversarial Networks
 Chuan Li, Michael Wand](https://arxiv.org/abs/1604.04382)
 
-* [ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks
-Xintao Wang, Ke Yu, Shixiang Wu, Jinjin Gu, Yihao Liu, Chao Dong, Chen Change Loy, Yu Qiao, Xiaoou Tang] (https://arxiv.org/abs/1809.00219v2)
+* [PESRGAN: Enhanced Super-Resolution Generative Adversarial Networks
+Xintao Wang, Ke Yu, Shixiang Wu, Jinjin Gu, Yihao Liu, Chao Dong, Chen Change Loy, Yu Qiao, Xiaoou Tangd](https://arxiv.org/abs/1809.00219v2)
 
