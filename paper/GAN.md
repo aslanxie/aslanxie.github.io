@@ -28,3 +28,5 @@ Chuan Li, Michael Wand](https://arxiv.org/abs/1604.04382)
 * [PESRGAN: Enhanced Super-Resolution Generative Adversarial Networks
 Xintao Wang, Ke Yu, Shixiang Wu, Jinjin Gu, Yihao Liu, Chao Dong, Chen Change Loy, Yu Qiao, Xiaoou Tangd](https://arxiv.org/abs/1809.00219v2)
 
+* [Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
+Christian Ledig, Lucas Theis, Ferenc Huszar, Jose Caballero, Andrew Cunningham, Alejandro Acosta, Andrew Aitken, Alykhan Tejani, Johannes Totz, Zehan Wang, Wenzhe Shi](https://arxiv.org/abs/1609.04802)
