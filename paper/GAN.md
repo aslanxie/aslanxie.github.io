@@ -22,4 +22,7 @@ Jun-Yan Zhu, Taesung Park, Phillip Isola, Alexei A. Efros](https://arxiv.org/abs
 * [A note on the evaluation of generative models
 Lucas Theis, Aäron van den Oord, Matthias Bethge](https://arxiv.org/abs/1511.01844)
 
+* [Precomputed Real-Time Texture Synthesis with Markovian Generative Adversarial Networks
+Chuan Li, Michael Wand](https://arxiv.org/abs/1604.04382)
+
 
