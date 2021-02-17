@@ -36,3 +36,8 @@ Christian Ledig, Lucas Theis, Ferenc Huszar, Jose Caballero, Andrew Cunningham, 
 
 * [The relativistic discriminator: a key element missing from standard GAN
 Alexia Jolicoeur-Martineau](https://arxiv.org/abs/1807.00734)
+
+* [The Perception-Distortion Tradeoff
+Yochai Blau, Tomer Michaeli](https://arxiv.org/abs/1711.06077)
+
+
