@@ -30,3 +30,6 @@ Xintao Wang, Ke Yu, Shixiang Wu, Jinjin Gu, Yihao Liu, Chao Dong, Chen Change Lo
 
 * [Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
 Christian Ledig, Lucas Theis, Ferenc Huszar, Jose Caballero, Andrew Cunningham, Alejandro Acosta, Andrew Aitken, Alykhan Tejani, Johannes Totz, Zehan Wang, Wenzhe Shi](https://arxiv.org/abs/1609.04802)
+
+* [The relativistic discriminator: a key element missing from standard GAN
+Alexia Jolicoeur-Martineau](https://arxiv.org/abs/1807.00734)
