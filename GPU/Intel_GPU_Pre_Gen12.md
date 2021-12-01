@@ -15,12 +15,12 @@ Traditionally, GPU contains following components:
 - Display/Overlay
 - Blitter: Block Image Transferrer, Copy Enine
 - GPE: Graphic Processing Engine, Render Engine, including 3D, Compute and Programmable Media workload
-- VCE: Video Codec Engine
+- VCE: Video Codec Engine, evolved to Multi-Format Codec (MFX) Engine, Video Enhancement Engine
 
 <p align="center">
   <img src="images/LKF_GPU_Block.png">
 </p>
-Moving into 3D/Media subsystem
+Moving into Render Engine
 <p align="center">
   <img src="images/Rendering_Engine.png">
 </p>
