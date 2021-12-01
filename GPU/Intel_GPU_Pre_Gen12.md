@@ -50,6 +50,8 @@ Work into the Render/GPGPU engine is fed using the Render Command Streamer.
 *Position only shader (POSH) is for 3D pipeline.*
 
 # Compute Resource Hierarchy
+Retrospect to Gen7.5, Intel keeps GPU's compute resource hierarchy, GPU/Slice/Subslice/EU, the same to Gen9.5 and Gen11. Every gen, modules functions/performance and memory system evolved.
+
 GPU/Slice/Subslice/EU
 <p align="center">
   <img src="images/Multi-Slice-GPU.png">
