@@ -1,8 +1,6 @@
 # Overview
 Before Gen12, Intel provides on-die integrated processor graphics architecture which offers graphics, compute, media, and display capabilities. For example, Intel® Core™ i7 processor 6700K is a one-slice instantiation of Intel processor graphics gen9 architecture.
 
-![Components_Layout_6700K_Gen9](images/Components_Layout_6700K_Gen9.png)
-
 <p align="center">
   <img src="images/Components_Layout_6700K_Gen9.png">
 </p>
