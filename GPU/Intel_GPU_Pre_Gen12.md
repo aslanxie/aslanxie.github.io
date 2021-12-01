@@ -67,3 +67,4 @@ GPU/Slice/Subslice/EU
   <img src="images/EU.png">
 </p>
 
+[The Compute Architecture of Intel® Processor Graphics Gen9, Page 6, 9, 10, 14](https://www.intel.com/content/dam/develop/external/us/en/documents/the-compute-architecture-of-intel-processor-graphics-gen9-v1d0-166010.pdf)
