@@ -24,16 +24,13 @@ Moving into Render Engine
 <p align="center">
   <img src="images/Rendering_Engine.png">
 </p>
-
-Media pipeline, evolved to general purpose compute pipeline.
-
 [INTEL® UHD GRAPHICS OPEN SOURCE PROGRAMMER'S REFERENCE MANUAL FOR THE 2020 INTEL CORE™ PROCESSORS WITH INTEL HYBRID TECHNOLOGY BASED ON THE "LAKEFIELD" PLATFORM, Volume 3: GPU Overview, Page 1-2](https://01.org/sites/default/files/documentation/intel-gfx-prm-osrc-lkf-vol03-gpu_overview.pdf)
 
 Latest GPU architecture contains:
 - Copy/Blitter Engine
 - Video Ehancement Engine
-- Video Decoder Engine
-- Render/Compute Engine
+- Video Decoder Engine, should mean MFX Engine including video decode and encode functions
+- Render Engine, 3D, Compute and Programmable Media funcitons
 <p align="center">
   <img src="images/command_streamer.png">
 </p>
