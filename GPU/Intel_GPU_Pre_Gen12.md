@@ -52,21 +52,26 @@ Work into the Render/GPGPU engine is fed using the Render Command Streamer.
 # Compute Resource Hierarchy
 Retrospect to Gen7.5, Intel keeps GPU's compute resource hierarchy, GPU/Slice/Subslice/EU, the same to Gen9.5 and Gen11. Every gen, modules functions/performance and memory system evolved.
 
-GPU/Slice/Subslice/EU
+A potential product design that instantiates the compute architecture of Intel® processor graphics gen9. This design is composed of three slices, of three subslices each for a total of 72 EUs.
 <p align="center">
   <img src="images/Multi-Slice-GPU.png">
 </p>
 
+The Intel processor graphics gen9 slice, containing three subslices for a total of 24 EUs. The slice adds supporting L3 cache, shared local memory, atomics, barriers, and other fixed function units.
 <p align="center">
   <img src="images/Slice.png">
 </p>
 
+The Intel processor graphics Gen9 subslice, containing 8 EUs each. The subslice also instantiates sampler and data port units per subslice.
 <p align="center">
   <img src="images/Subslice.png">
 </p>
 
+The Execution Unit (EU). Each gen9 EU has seven threads. Each thread has 128 SIMD-8 32-bit registers (GRF) and supporting architecture specific registers (ARF). The EU can co-issue to four instruction processing units including two FPUs, a branch unit, and a message send unit.
 <p align="center">
   <img src="images/EU.png">
 </p>
 
 [The Compute Architecture of Intel® Processor Graphics Gen9, Page 6, 9, 10, 14](https://www.intel.com/content/dam/develop/external/us/en/documents/the-compute-architecture-of-intel-processor-graphics-gen9-v1d0-166010.pdf)
+
+# Execution Unit
