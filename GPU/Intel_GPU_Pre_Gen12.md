@@ -77,3 +77,10 @@ The Execution Unit (EU). Each gen9 EU has seven threads. Each thread has 128 SIM
 [The Compute Architecture of Intel® Processor Graphics Gen9, Page 6, 9, 10, 14](https://www.intel.com/content/dam/develop/external/us/en/documents/the-compute-architecture-of-intel-processor-graphics-gen9-v1d0-166010.pdf)
 
 # Execution Unit
+WIP
+GRF
+MRF
+Instruction/Compact Instruction
+work item and thread
+SIMD and thread
+mask
