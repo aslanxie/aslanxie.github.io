@@ -14,7 +14,7 @@ Before Gen12, Intel provides on-die integrated processor graphics architecture w
 Traditionally, GPU contains following components:
 - Display/Overlay
 - Blitter: Block Image Transferrer, Copy Enine
-- GPE: Graphic Processing Engine
+- GPE: Graphic Processing Engine, 3D, Compute/Programmable Media
 - VCE: Video Codec Engine
 
 <p align="center">
