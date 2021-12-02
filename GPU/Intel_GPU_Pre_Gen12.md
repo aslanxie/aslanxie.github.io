@@ -32,6 +32,9 @@ From command stream programming view, GPU hardware consists of multiple parallel
 
 [INTEL® UHD GRAPHICS OPEN SOURCE PROGRAMMER'S REFERENCE MANUAL FOR THE 2020 INTEL CORE™ PROCESSORS WITH INTEL HYBRID TECHNOLOGY BASED ON THE "LAKEFIELD" PLATFORM, Volume 8: Command Stream Programming, Page 1](https://01.org/sites/default/files/documentation/intel-gfx-prm-osrc-lkf-vol08-command_stream_programming.pdf)
 
+**Compute Command Streamer is showing in DG1. It should be a dedicated command streamer for compute/GPGPU, separated from RCS.** 
+
+[INTEL® IRIS® XE MAX GRAPHICS OPEN SOURCE PROGRAMMER'S REFERENCE MANUAL FOR THE 2020 DISCRETE GPU FORMERLY NAMED "DG1", Volume 8: Command Stream Programming, Page 30](https://01.org/sites/default/files/documentation/intel-gfx-prm-osrc-dg1-vol08-command_stream_programming.pdf)
 ## Render Engine
 Moving into Render Engine
 <p align="center">
