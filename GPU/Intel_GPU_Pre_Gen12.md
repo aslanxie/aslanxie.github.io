@@ -58,7 +58,7 @@ Work into the Render/GPGPU engine is fed using the Render Command Streamer.
 *Position only shader (POSH) is for 3D pipeline.*
 
 # Compute Resource Hierarchy
-Retrospecting to Gen7.5, Intel keeps GPU's compute resource hierarchy, GPU/Slice/Subslice/EU, the same to Gen9.5 and Gen11. 
+Retrospecting to Gen7.5, Intel keeps GPU's compute resource hierarchy, **GPU/Slice/Subslice/EU**, the same to Gen9.5 and Gen11. 
 
 ## GPU
 A potential product design that instantiates the compute architecture of Intel® processor graphics gen9. This design is composed of three slices, of three subslices each for a total of 72 EUs.
@@ -78,6 +78,10 @@ The Intel processor graphics Gen9 subslice, containing 8 EUs each. The subslice 
   <img src="images/Subslice.png">
 </p>
 
+Each subslice contains its own **local thread dispatcher** unit, **data port** and its own supporting **instruction caches**.
+
+
+
 ## EU
 The Execution Unit (EU). Each gen9 EU has seven threads. Each thread has 128 SIMD-8 32-bit registers (GRF) and supporting architecture specific registers (ARF). The EU can co-issue to four instruction processing units including two FPUs, a branch unit, and a message send unit.
 <p align="center">
@@ -88,15 +92,30 @@ The Execution Unit (EU). Each gen9 EU has seven threads. Each thread has 128 SIM
 
 EUs support a rich instruction set. This instruction set has been optimized to support various 3D API shader languages, media functions processing, and compute kernels.
 
-
-
 - ALU/FPU/SIMD
 - GRF: For gen9-based products, each EU thread has 128 general purpose registers. Each register stores 32 bytes, accessible as a SIMD 8-element vector of 32-bit data elements. Thus each gen9 thread has 4 Kbytes of general purpose register file (GRF).
 - ARF: Per-thread architectural state is maintained in a separate dedicated architecture register file (ARF).
 
 
+### Data Port
+The Data Port provides all memory accesses for the subsystem other than those provided by the sampling engine. These include constant buffer reads, scratch space reads/writes, and media surface accesses.
+The diagram below shows how the Read-Only and Read/Write Data Ports connect with the caches and memory subsystem. The execution units and sampling engine are shown for clarity.
+Data Port Connections to Caches and Memory
+<p align="center">
+  <img src="images/DataPort.png">
+</p>
 
-# Execution Unit
+[INTEL® UHD GRAPHICS OPEN SOURCE PROGRAMMER'S REFERENCE MANUAL FOR THE 2020 INTEL CORE™ PROCESSORS WITH INTEL HYBRID TECHNOLOGY BASED ON THE "LAKEFIELD" PLATFORM, Volume 9: Render Engine, Page 657](https://01.org/sites/default/files/documentation/intel-gfx-prm-osrc-lkf-vol09-renderengine.pdf)
+
+### Messsage Flow
+Communication between the EUs and the shared functions and between the fixed function pipelines (which are not considered part of the "Subsystem") and the EUs is accomplished via packets of information called messages. Message transmission is requested via the send instruction.
+<p align="center">
+  <img src="images/MessageFlow.png">
+</p>
+
+[INTEL® UHD GRAPHICS OPEN SOURCE PROGRAMMER'S REFERENCE MANUAL FOR THE 2020 INTEL CORE™ PROCESSORS WITH INTEL HYBRID TECHNOLOGY BASED ON THE "LAKEFIELD" PLATFORM, Volume 9: Render Engine, Page 348](https://01.org/sites/default/files/documentation/intel-gfx-prm-osrc-lkf-vol09-renderengine.pdf)
+
+
 
 - GRF
 - ARF
