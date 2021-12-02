@@ -86,6 +86,16 @@ The Execution Unit (EU). Each gen9 EU has seven threads. Each thread has 128 SIM
 
 [The Compute Architecture of Intel® Processor Graphics Gen9, Page 6, 9, 10, 14](https://www.intel.com/content/dam/develop/external/us/en/documents/the-compute-architecture-of-intel-processor-graphics-gen9-v1d0-166010.pdf)
 
+EUs support a rich instruction set. This instruction set has been optimized to support various 3D API shader languages, media functions processing, and compute kernels.
+
+
+
+- ALU/FPU/SIMD
+- GRF: For gen9-based products, each EU thread has 128 general purpose registers. Each register stores 32 bytes, accessible as a SIMD 8-element vector of 32-bit data elements. Thus each gen9 thread has 4 Kbytes of general purpose register file (GRF).
+- ARF: Per-thread architectural state is maintained in a separate dedicated architecture register file (ARF).
+
+
+
 # Execution Unit
 
 - GRF
