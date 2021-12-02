@@ -32,6 +32,10 @@ From command stream programming view, GPU hardware consists of multiple parallel
 
 [INTEL® UHD GRAPHICS OPEN SOURCE PROGRAMMER'S REFERENCE MANUAL FOR THE 2020 INTEL CORE™ PROCESSORS WITH INTEL HYBRID TECHNOLOGY BASED ON THE "LAKEFIELD" PLATFORM, Volume 8: Command Stream Programming, Page 1](https://01.org/sites/default/files/documentation/intel-gfx-prm-osrc-lkf-vol08-command_stream_programming.pdf)
 
+**Compute Command Streamer is showing in DG1. It should be a dedicated command streamer for compute/GPGPU, separated from RCS.** 
+
+[INTEL® IRIS® XE MAX GRAPHICS OPEN SOURCE PROGRAMMER'S REFERENCE MANUAL FOR THE 2020 DISCRETE GPU FORMERLY NAMED "DG1", Volume 8: Command Stream Programming, Page 30](https://01.org/sites/default/files/documentation/intel-gfx-prm-osrc-dg1-vol08-command_stream_programming.pdf)
+
 ## Render Engine
 Moving into Render Engine
 <p align="center">
@@ -54,29 +58,43 @@ Work into the Render/GPGPU engine is fed using the Render Command Streamer.
 *Position only shader (POSH) is for 3D pipeline.*
 
 # Compute Resource Hierarchy
-Retrospect to Gen7.5, Intel keeps GPU's compute resource hierarchy, GPU/Slice/Subslice/EU, the same to Gen9.5 and Gen11. Every gen, modules functions/performance and memory system evolved.
+Retrospecting to Gen7.5, Intel keeps GPU's compute resource hierarchy, GPU/Slice/Subslice/EU, the same to Gen9.5 and Gen11. 
 
+## GPU
 A potential product design that instantiates the compute architecture of Intel® processor graphics gen9. This design is composed of three slices, of three subslices each for a total of 72 EUs.
 <p align="center">
   <img src="images/Multi-Slice-GPU.png">
 </p>
 
+## Slice
 The Intel processor graphics gen9 slice, containing three subslices for a total of 24 EUs. The slice adds supporting L3 cache, shared local memory, atomics, barriers, and other fixed function units.
 <p align="center">
   <img src="images/Slice.png">
 </p>
 
+## Subslice
 The Intel processor graphics Gen9 subslice, containing 8 EUs each. The subslice also instantiates sampler and data port units per subslice.
 <p align="center">
   <img src="images/Subslice.png">
 </p>
 
+## EU
 The Execution Unit (EU). Each gen9 EU has seven threads. Each thread has 128 SIMD-8 32-bit registers (GRF) and supporting architecture specific registers (ARF). The EU can co-issue to four instruction processing units including two FPUs, a branch unit, and a message send unit.
 <p align="center">
   <img src="images/EU.png">
 </p>
 
 [The Compute Architecture of Intel® Processor Graphics Gen9, Page 6, 9, 10, 14](https://www.intel.com/content/dam/develop/external/us/en/documents/the-compute-architecture-of-intel-processor-graphics-gen9-v1d0-166010.pdf)
+
+EUs support a rich instruction set. This instruction set has been optimized to support various 3D API shader languages, media functions processing, and compute kernels.
+
+
+
+- ALU/FPU/SIMD
+- GRF: For gen9-based products, each EU thread has 128 general purpose registers. Each register stores 32 bytes, accessible as a SIMD 8-element vector of 32-bit data elements. Thus each gen9 thread has 4 Kbytes of general purpose register file (GRF).
+- ARF: Per-thread architectural state is maintained in a separate dedicated architecture register file (ARF).
+
+
 
 # Execution Unit
 
