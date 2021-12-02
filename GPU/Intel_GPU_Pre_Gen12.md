@@ -79,13 +79,15 @@ The Execution Unit (EU). Each gen9 EU has seven threads. Each thread has 128 SIM
 [The Compute Architecture of Intel® Processor Graphics Gen9, Page 6, 9, 10, 14](https://www.intel.com/content/dam/develop/external/us/en/documents/the-compute-architecture-of-intel-processor-graphics-gen9-v1d0-166010.pdf)
 
 # Execution Unit
-WIP
-GRF
-MRF
-Instruction/Compact Instruction
-work item and thread
-SIMD and thread
-mask
+
+- GRF
+- ARF
+- MRF
+- Instruction/Compact Instruction
+- work item and thread
+- SIMD and thread
+- mask
+- EU native instructions are 128 bits (16 bytes) wide. Some combinations of instruction options can use compact instruction formats that are 64 bits (8 bytes) wide.
 
 # Workload Mapping
 The compiler determines how many SIMD channels are needed per thread group, and then decides how these are split among EU threads. The number of threads is programmed in the thread counter, and the SIMD mode (SIMD8/SIMD16/SIMD32) is specified in the GPGPU_WALKER command.
