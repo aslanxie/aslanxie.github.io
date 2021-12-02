@@ -97,7 +97,7 @@ The Execution Unit (EU). Each gen9 EU has seven threads. Each thread has 128 SIM
 
 EUs support a rich instruction set. This instruction set has been optimized to support various 3D API shader languages, media functions processing, and compute kernels.
 
-- ALU/FPU/SIMD
+- ALU/FPU/SIMD: EU native instructions are 128 bits (16 bytes) wide. Some combinations of instruction options can use compact instruction formats that are 64 bits (8 bytes) wide.
 - GRF: For gen9-based products, each EU thread has 128 general purpose registers. Each register stores 32 bytes, accessible as a SIMD 8-element vector of 32-bit data elements. Thus each gen9 thread has 4 Kbytes of general purpose register file (GRF).
 - ARF: Per-thread architectural state is maintained in a separate dedicated architecture register file (ARF).
 
@@ -122,6 +122,8 @@ Communication between the EUs and the shared functions and between the fixed fun
 
 
 
+# Workload Mapping
+
 - GRF
 - ARF
 - MRF
@@ -131,7 +133,6 @@ Communication between the EUs and the shared functions and between the fixed fun
 - mask
 - EU native instructions are 128 bits (16 bytes) wide. Some combinations of instruction options can use compact instruction formats that are 64 bits (8 bytes) wide.
 
-# Workload Mapping
 The compiler determines how many SIMD channels are needed per thread group, and then decides how these are split among EU threads. The number of threads is programmed in the thread counter, and the SIMD mode (SIMD8/SIMD16/SIMD32) is specified in the GPGPU_WALKER command.
 
 The maximum thread group size must fit into a single subslice (or DSS) and run in parallel, so the number of EU threads must be less than the number specified in Configurations for threads per subslice (DSS).
