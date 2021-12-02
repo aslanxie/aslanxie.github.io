@@ -40,6 +40,8 @@ Moving into Render Engine
 
 [INTEL® UHD GRAPHICS OPEN SOURCE PROGRAMMER'S REFERENCE MANUAL FOR THE 2020 INTEL CORE™ PROCESSORS WITH INTEL HYBRID TECHNOLOGY BASED ON THE "LAKEFIELD" PLATFORM, Volume 3: GPU Overview, Page 1-2](https://01.org/sites/default/files/documentation/intel-gfx-prm-osrc-lkf-vol03-gpu_overview.pdf)
 
+[INTEL® UHD GRAPHICS OPEN SOURCE PROGRAMMER'S REFERENCE MANUAL FOR THE 2020 INTEL CORE™ PROCESSORS WITH INTEL HYBRID TECHNOLOGY BASED ON THE "LAKEFIELD" PLATFORM, Volume 9: Render Engine, Page 299](https://01.org/sites/default/files/documentation/intel-gfx-prm-osrc-lkf-vol03-gpu_overview.pdf)
+
 *The Unified Return Buffer (URB) is as a temporary holding area that handles the process of thread creation and dispatch.*
 
 Work into the Render/GPGPU engine is fed using the Render Command Streamer.
@@ -84,3 +86,11 @@ Instruction/Compact Instruction
 work item and thread
 SIMD and thread
 mask
+
+# Workload Mapping
+The compiler determines how many SIMD channels are needed per thread group, and then decides how these are split among EU threads. The number of threads is programmed in the thread counter, and the SIMD mode (SIMD8/SIMD16/SIMD32) is specified in the GPGPU_WALKER command.
+
+The maximum thread group size must fit into a single subslice (or DSS) and run in parallel, so the number of EU threads must be less than the number specified in Configurations for threads per subslice (DSS).
+
+[INTEL® UHD GRAPHICS OPEN SOURCE PROGRAMMER'S REFERENCE MANUAL FOR THE 2020 INTEL CORE™ PROCESSORS WITH INTEL HYBRID TECHNOLOGY BASED ON THE "LAKEFIELD" PLATFORM, Volume 9: Render Engine, Page 317](https://01.org/sites/default/files/documentation/intel-gfx-prm-osrc-lkf-vol03-gpu_overview.pdf)
+
