@@ -136,6 +136,7 @@ A workload shuould be decomposed in to workgroups and work items, and adapated t
 - workgroup fit into subslice
 - work item is mapping with SIMD and thread
 - branch and mask
+- multiple task/work list
 
 The compiler determines how many SIMD channels are needed per thread group, and then decides how these are split among EU threads. The number of threads is programmed in the thread counter, and the SIMD mode (SIMD8/SIMD16/SIMD32) is specified in the GPGPU_WALKER command.
 
