@@ -120,6 +120,7 @@ Communication between the EUs and the shared functions and between the fixed fun
 
 [INTEL® UHD GRAPHICS OPEN SOURCE PROGRAMMER'S REFERENCE MANUAL FOR THE 2020 INTEL CORE™ PROCESSORS WITH INTEL HYBRID TECHNOLOGY BASED ON THE "LAKEFIELD" PLATFORM, Volume 9: Render Engine, Page 348](https://01.org/sites/default/files/documentation/intel-gfx-prm-osrc-lkf-vol09-renderengine.pdf)
 
+- MRF
 
 
 # Workload Mapping
@@ -132,15 +133,9 @@ A workload shuould be decomposed in to workgroups and work items, and adapated t
 
 - SIMD, vector
 - SIMT, scalar
-
-- GRF
-- ARF
-- MRF
-- Instruction/Compact Instruction
-- work item and thread
-- SIMD and thread
-- mask
-- EU native instructions are 128 bits (16 bytes) wide. Some combinations of instruction options can use compact instruction formats that are 64 bits (8 bytes) wide.
+- workgroup fit into subslice
+- work item is mapping with SIMD and thread
+- branch and mask
 
 The compiler determines how many SIMD channels are needed per thread group, and then decides how these are split among EU threads. The number of threads is programmed in the thread counter, and the SIMD mode (SIMD8/SIMD16/SIMD32) is specified in the GPGPU_WALKER command.
 
