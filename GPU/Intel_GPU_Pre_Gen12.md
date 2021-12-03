@@ -123,15 +123,15 @@ Communication between the EUs and the shared functions and between the fixed fun
 
 
 # Workload Mapping
-
+A workload shuould be decomposed in to workgroups and work items, and adapated to GPU processing element(core/ALU).
 [ An example (The OpenCL™ Specification Execution Model section) of an NDRange index space showing work-items, their global IDs and their mapping onto the pair of work-group and local IDs.](https://www.khronos.org/registry/OpenCL/specs/3.0-unified/html/OpenCL_API.html#_mapping_work_items_onto_an_ndrange)
 
 <p align="center">
   <img src="images/ocl_index.jpg">
 </p>
 
-- SIMD
-- SIMT
+- SIMD, vector
+- SIMT, scalar
 
 - GRF
 - ARF
