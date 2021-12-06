@@ -1,4 +1,4 @@
-# Notes to Discuss Intel GPU Architecture
+# Notes for Discussing Intel GPU Architecture
 
 [Graphics processing technology has evolved to deliver unique benefits in the world of computing. The latest graphics processing units (GPUs) unlock new possibilities in gaming, content creation, machine learning, and more.](https://www.intel.com/content/www/us/en/products/docs/processors/what-is-a-gpu.html)
 
