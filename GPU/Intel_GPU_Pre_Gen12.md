@@ -77,6 +77,9 @@ A potential product design that instantiates the compute architecture of Intel®
   <img src="images/Multi-Slice-GPU.png">
 </p>
 
+- Thread dispatcher
+- Every slice have their own data cache and interface to access DRAM.
+
 ## Slice
 The Intel processor graphics gen9 slice, containing three subslices for a total of 24 EUs. The slice adds supporting L3 cache, shared local memory, atomics, barriers, and other fixed function units.
 <p align="center">
