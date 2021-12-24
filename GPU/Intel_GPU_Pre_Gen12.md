@@ -79,6 +79,7 @@ A potential product design that instantiates the compute architecture of Intel®
 
 - Global Thread dispatcher
 - Every slice have their own data cache and interface to access DRAM.
+- GPU RAM bandwidth: from DRAM to cache, depending on the number of RAM interface lanes and frequency. 
 
 ## Slice
 The Intel processor graphics gen9 slice, containing three subslices for a total of 24 EUs. The slice adds supporting L3 cache, shared local memory, atomics, barriers, and other fixed function units.
