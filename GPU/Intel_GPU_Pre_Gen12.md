@@ -77,7 +77,7 @@ A potential product design that instantiates the compute architecture of Intel®
   <img src="images/Multi-Slice-GPU.png">
 </p>
 
-- Thread dispatcher
+- Global Thread dispatcher
 - Every slice have their own data cache and interface to access DRAM.
 
 ## Slice
@@ -86,13 +86,14 @@ The Intel processor graphics gen9 slice, containing three subslices for a total 
   <img src="images/Slice.png">
 </p>
 
+
 ## Subslice
 The Intel processor graphics Gen9 subslice, containing 8 EUs each. The subslice also instantiates sampler and data port units per subslice.
 <p align="center">
   <img src="images/Subslice.png">
 </p>
 
-Each subslice contains its own **local thread dispatcher** unit, **data port** and its own supporting **instruction caches**.
+Each subslice contains its own **local thread dispatcher** unit, **data port/cache** and its own supporting **instruction caches**.
 
 
 
