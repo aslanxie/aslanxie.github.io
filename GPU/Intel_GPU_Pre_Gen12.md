@@ -148,7 +148,7 @@ A workload shuould be decomposed into workgroups and work items, and adapated to
 - branch and mask
 - multiple task/work list
 
-## The compiler is responsible for mapping work items with threads and SIMD
+**The compiler is responsible for mapping work items with threads and SIMD.**
 The compiler determines how many SIMD channels are needed per thread group, and then decides how these are split among EU threads. The number of threads is programmed in the thread counter, and the SIMD mode (SIMD8/SIMD16/SIMD32) is specified in the GPGPU_WALKER command.
 
 
