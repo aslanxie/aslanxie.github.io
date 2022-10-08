@@ -18,3 +18,4 @@ Graphic Pipeline is a conceptual model that describes what steps a graphics syst
 
 # Reference
 - https://en.wikipedia.org/wiki/Graphics_pipeline
+- https://www.tomshardware.com/reviews/gpu-graphics-card-definition,5742.html
