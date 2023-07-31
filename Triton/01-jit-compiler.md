@@ -199,6 +199,7 @@ def make_stub(name, signature, constants):
 
 CompiledKernel load the Python extending module from shared library and assign launch function to c_wrapper. It's the object return by compile and exected by Python interpreter. The built triton kernel binary is passed by asm parameter.
 
+
 ```
 # python/triton/compiler/compiler.py
 class CompiledKernel:
@@ -227,4 +228,13 @@ class CompiledKernel:
         return runner
 ```
 
+The built binary kernel is loaded through CUDA  Module Management interface. This is a Python extendsion, too.
+```
+#python/triton/runtime/backends/cuda.c
+static PyObject *loadBinary(PyObject *self, PyObject *args) {
+   ...
+  CUDA_CHECK(cuModuleLoadData(&mod, data));
+  CUDA_CHECK(cuModuleGetFunction(&fun, mod, name));
+  ...
+```
 
