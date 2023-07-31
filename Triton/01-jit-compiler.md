@@ -101,8 +101,31 @@ def ast_to_ttir(fn, signature, specialization, constants, debug, arch):
     return ret
 ```
 
-### TODO: other stages of kernel code compiling
+### TTGIR
+todo
 
+### LLIR
+todo
+
+### PTX
+PTX is a low-level parallel-thread-execution virtual machine and ISA (Instruction Set Architecture). 
+todo
+
+### CUBIN
+
+CUDA binary is a parameter of CompiledKernel. It'll be launched by launch functon in our extending Python module.
+
+```
+def compile(fn, **kwargs):
+    ...
+    if ir_name == "cubin":
+            asm[ir_name] = next_module
+
+    ...
+    return CompiledKernel(fn, so_path, metadata, asm)
+```
+
+todo
 
 ## Python Extending 
 
@@ -174,7 +197,7 @@ def make_stub(name, signature, constants):
 
 ### Launch Triton Kernel
 
-CompiledKernel load the Python extending module from shared library and assign launch function to c_wrapper. It's the object return by compile and exected by Python interpreter.
+CompiledKernel load the Python extending module from shared library and assign launch function to c_wrapper. It's the object return by compile and exected by Python interpreter. The built triton kernel binary is passed by asm parameter.
 
 ```
 # python/triton/compiler/compiler.py
@@ -204,40 +227,4 @@ class CompiledKernel:
         return runner
 ```
 
-
-
-
-
-
-
-
-
-
-## Backup
-***@triton.jit*** decorator is parsed by [Triton JIT runtime](https://github.com/openai/triton/blob/main/python/triton/runtime/jit.py).
-
-Python built-in function *exec* evoke [compiler](https://github.com/openai/triton/blob/main/python/triton/compiler/compiler.py) to compile and optimize user defined kernel.
-
-
-JITFunction.src contain ***@triton.jit*** decorator code.
-
-JITFunction._make_launcher function obtain the dynamically generate code function object through *exec* and assign to *JITFunction.run*. The dynamically generate code includes function of detecting and configuring environment for  compiling *JITFunction.src*.
-
-*exec(src, scope)* is called to compile and optimize kernel codes, the ***src*** only includes the function def which looks like return the compiled binary object. The ***compile*** function is overloaded by local codes, not default Python Built-in Function. 
-
-JITFunction.parse will parse JITFunction.src to AST.
-
-In [compiler.py](https://github.com/openai/triton/blob/main/python/triton/compiler/compiler.py):
-1. Function compile describe complier stages and generate a CompiledKernel object.
-2. class CompiledKernel provide interface to launch kernel
-
-dynamical source of compile
-
-JITFunction.parse(python kernel source) --> AST
-
-ast_to_ttir(ast) --> generator.module
-
-CodeGenerator.module = self.builder.create_module() if module is None else module
-
-optimize_ttir(mod) --> ...
 
