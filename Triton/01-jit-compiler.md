@@ -48,6 +48,14 @@ class JITFunction(KernelInterface[T]):
 
 There are several stage to compile(optimize) kernel code, for example on CUDA platform including:ast, ttir, ttgir, llir, ptx and cubin. Here is showing roughly process from source code to ast and ttir. 
 
+In compile function, it build compiler **stages** with IR lowering functions to generate execution binary finally.
+
+```
+def compile(fn, **kwargs):
+  ...
+  for ir_name, (parse, compile_kernel) in list(stages.items())[first_stage:]:
+```
+
 At last, the kernel code will be comipled to binary code for hardware paltfrom, such as cubin for CUDA platform.
 
 ### AST
