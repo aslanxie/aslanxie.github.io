@@ -74,6 +74,13 @@ class JITFunction(KernelInterface[T]):
       return tree
 
 ```
+Here is the file list for understanding AST and creating mapping TTIR.
+- https://github.com/openai/triton/blob/main/python/triton/compiler/code_generator.py
+- https://github.com/openai/triton/blob/main/python/triton/language/core.py
+- https://github.com/openai/triton/blob/main/python/triton/language/semantic.py
+
+Here is mapping C++ class/function to Python code interface. 
+-https://github.com/openai/triton/blob/main/python/src/triton.cc
 
 ### TTIR
 
