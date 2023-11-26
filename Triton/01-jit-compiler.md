@@ -58,6 +58,8 @@ def compile(fn, **kwargs):
 
 At last, the kernel code will be comipled to binary code for hardware paltfrom, such as cubin for CUDA platform.
 
+Set ***MLIR_ENABLE_DUMP=True*** will show details of complier running trace.
+
 ### AST
 
 It depend Python standard library [ast](https://docs.python.org/3/library/ast.html) to generate Abstract Syntax Trees.
