@@ -8,9 +8,16 @@
 5. Compute kernels written in Triton can achieve maximum throughput on modern GPU hardware, ensuring optimal performance.
 6. Triton compute kernels can be seamlessly launched from Python code, functioning like any other library function for ease of use and integration.
 
-## From Python Code to SPV
+## Process of Trition
 
-Python code kernel
+Firstly, Triton translates Python code kernel to an IR, like SPIR-V for Intel GPU and LLVM IR for NVIDIA GPU.
+Then, Triton depends on GPU vendor tools/drivers tranlating the IR to device binary code which could run direclty on GPU.
+
+Here is showing based on the example of [intel-xpu-backend-for-triton](https://github.com/intel/intel-xpu-backend-for-triton/tree/llvm-target). Other backend is similar with it.
+
+[Here is the example codes](./src/TritonL0GPU) for below example.
+
+### Define Python Code Kernel
 
 ```
 # Reference: https://github.com/intel/intel-xpu-backend-for-triton/blob/llvm-target/python/tutorials/01-vector-add.py
@@ -44,7 +51,11 @@ def add_kernel(x_ptr,  # *Pointer* to first input vector.
     # Write x + y back to DRAM.
     tl.store(output_ptr + offsets, output, mask=mask)
 ```
-Compile to SPV
+
+### Complie Kernel to IR
+
+Following is example code of driving Python kernel codes to SPV.
+
 ```
 import os
 import torch
@@ -231,7 +242,8 @@ with open("add_kernel.spv", "wb") as file:
     print("Save to add_kernel.spv")
 ```
 
-The output
+
+And the output:
 ```
 TTIR:  #loc = loc("/dataset/aslan/workspace/Triton/gen_spv.py":6:0)
 module {
@@ -281,9 +293,10 @@ SPV:  b'\x03\x02#\x07\x00\x01\x01\x00\x0e\x00\x06\x00R\x00\x00\x00\x00\x00\x00\x
 Save to add_kernel.spv
 ```
 
-Dissamble spv to text format
+***add_kernel.spv*** is SPIR-V binary code mode, [spirv-dis]( https://github.com/KhronosGroup/SPIRV-Tools) can help to dissamble spv to text format.
 ```
-spirv-dis add_kernel.spv 
+spirv-dis add_kernel.spv
+
 ; SPIR-V
 ; Version: 1.1
 ; Generator: Khronos LLVM/SPIR-V Translator; 14
@@ -323,7 +336,14 @@ spirv-dis add_kernel.spv
                OpFunctionEnd
 ```
 
-disasm device binary
+### Compile IR to Device Binary
+
+At this time, there are 2 mehtods of compiling SPV to Intel GPU binary codes:
+1. Programing interface like [L0](https://spec.oneapi.io/level-zero/latest/core/PROG.html#), etc. It's showing in sample code.
+2. ***ocloc compile*** from [Intel(R) Graphics Compute Runtime](https://github.com/intel/compute-runtime)
+
+ocloc can disassemble Intel GPU binary codes, too. Here is the example:
+
 ```
 ocloc disasm -file add_kernel.bin -device pvc
 
@@ -337,3 +357,11 @@ L0:
 ...        
 
 ```
+
+### Launch Kernel on GPU
+
+On Intel platform, [L0 programning interface](src/TritonL0GPU/L0GPUContext.cpp#L218) and sycl are available for launching the kernel on GPU.
+
+Trition combines these operation to a Python plugin which can be called like a genenal Python library funciton.
+
+
